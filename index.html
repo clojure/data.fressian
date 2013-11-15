@@ -1,0 +1,385 @@
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>clojure.data.fressian - Extensible Binary Data Notations 0.2.0 API documentation</title>
+    <link href="static/favicon.png" rel="icon" />
+    <link href="static/favicon.png" rel="shortcut icon" />
+    <link media="all" type="text/css" href="static/clojure.css" rel="stylesheet" />
+    <link media="all" type="text/css" href="static/wiki.css" rel="stylesheet" />
+    <link media="all" type="text/css" href="static/internal.css" rel="stylesheet" />
+    <style>.menuWrapper{height: 36px;}</style>
+  </head>
+<!--
+This document was auto-generated from the source by the clojure autodoc system.
+To report errors or ask questions about the overall documentation structure, formatting,
+etc., contact Tom Faulhaber (google mail name: tomfaulhaber).
+For errors in the documentation of a particular namespace, contact the author of that
+namespace.
+-->
+  <body>
+    <div id="AllContentContainer">
+      <div id="Header">
+	<a id="Logo" href="index.html"><img alt="Clojure" height="100" width="100" src="static/clojure-icon.gif" /></a>
+	<h1><a title="page header title" id="page-header" href="index.html">data.fressian API Reference</a></h1>
+      </div>
+      <div id="leftcolumn"><div style="text-align: center;"></div>
+<div class="menu">
+  <div class="WikiCustomNav WikiElement wiki">
+    <span class="toc-header"><span id="project-name">Extensible Binary Data Notations</span> <span id="version">0.2.0</span> API</span><br />
+    <ul>
+      <li><a class="wiki_link" href="index.html">Overview</a></li>
+      <li><a class="wiki_link" href="api-index.html">API Index</a></li>
+    </ul>
+    
+    
+    <a href="http://clojure.org" class="wiki_link">Clojure Home</a>
+  </div>
+</div>
+</div>
+      <div id="rightcolumn">
+	<div id="Content">
+	  <div class="contentBox"><div class="innerContentBox">
+              <div id="content_view" class="wiki wikiPage">
+                <div id="right-sidebar"><div id="toc">
+  <h1 class="nopad">Table of Contents</h1>
+  <div style="margin-left: 1em;" class="toc-section">
+    <a href="#toc0" style="margin-top: 3px;">Overview</a>
+    
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#proto-section" style="margin-top: 3px;">Protocols</a>
+    <div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/FressianReadable">FressianReadable</a>
+      <div style="margin-left: 1em;" class="toc-subentry">
+        <a class="toc-subentry-anchor" href="#clojure.data.fressian/to-input-stream">to-input-stream</a>
+      </div>
+    </div>
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#" style="margin-top: 3px;"></a>
+    
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#var-section" style="margin-top: 3px;">Vars and Functions</a>
+    <div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/associative-lookup">associative-lookup</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/begin-closed-list">begin-closed-list</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/begin-open-list">begin-open-list</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/clojure-read-handlers">clojure-read-handlers</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/clojure-write-handlers">clojure-write-handlers</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/create-reader">create-reader</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/create-writer">create-writer</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/end-list">end-list</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/field-caching-writer">field-caching-writer</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/inheritance-lookup">inheritance-lookup</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/read">read</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/read-object">read-object</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/tag">tag</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/tagged-object?">tagged-object?</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/tagged-value">tagged-value</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/write">write</a>
+      
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a class="toc-entry-anchor" href="#clojure.data.fressian/write-object">write-object</a>
+      
+    </div>
+  </div>
+</div>
+</div>
+                <div id="content-tag"><h1 id="overview">API for <span id="clojure.data.fressian">clojure.data.fressian</span>
+  - <span id="header-project">Extensible Binary Data Notations</span> <span id="header-version">0.2.0</span><span id="header-status-block"> (<span id="header-status">in development</span>)</span>
+  </h1>
+<span id="author-line">by <span id="author-name">Stuart Halloway</span><br /></span>
+<br />Full namespace name: <span id="long-name">clojure.data.fressian</span>
+<p></p>
+<h2>Overview</h2>
+<div id="home-page">Project home page is <a href="http://github.com/clojure/data.fressian/">http://github.com/clojure/data.fressian/</a></div>
+<pre id="namespace-docstr">Read/write fressian data. See <a href="http://www.edn-format.org/">http://www.edn-format.org/</a></pre>
+
+
+<br />
+
+<div id="proto-section">
+  <p></p>
+  <h2>Protocols</h2>
+  <div id="proto-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/FressianReadable">FressianReadable</h2>
+    <span id="proto-type">Protocol</span><br />
+    <pre id="proto-docstr"></pre>
+    Known implementations: <span id="proto-impls">java.nio.ByteBuffer, Object</span>
+    <div id="proto-var-entry">
+      <br />
+      <h3 id="clojure.data.fressian/to-input-stream">to-input-stream</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (to-input-stream obj)
+</pre>
+      <pre id="var-docstr">Implementation detail.</pre>
+      
+      
+      
+    </div>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L38" id="proto-source">Source</a>
+  </div>
+</div>
+
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/associative-lookup">associative-lookup</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (associative-lookup o)
+</pre>
+    <pre id="var-docstr">Build an ILookup from an associative collection.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L52" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/begin-closed-list">begin-closed-list</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (begin-closed-list writer)
+</pre>
+    <pre id="var-docstr">Begin writing a fressianed list.  To end the list, call end-list.
+Used to write sequential data whose size is not known in advance.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L271" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/begin-open-list">begin-open-list</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (begin-open-list writer)
+</pre>
+    <pre id="var-docstr">Advanced.  Writes fressian code to begin an open list.  An
+open list can be terminated either by a call to end-list,
+or by simply closing the stream.  Used to write sequential
+data whose size is not known in advance, in contexts where
+stream failure can safely be interpreted as end of list.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L282" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/clojure-read-handlers">clojure-read-handlers</h2>
+    <span id="var-type">var</span><br />
+    <pre id="var-usage"></pre>
+    <pre id="var-docstr">Standard set of read handlers for Clojure data.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L159" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/clojure-write-handlers">clojure-write-handlers</h2>
+    <span id="var-type">var</span><br />
+    <pre id="var-usage"></pre>
+    <pre id="var-docstr">Standard set of write handlers for Clojure data.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L71" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/create-reader">create-reader</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (create-reader in &amp; {:keys [handlers checksum?]})
+</pre>
+    <pre id="var-docstr">Create a fressian reader targeting in, which must be compatible
+with clojure.java.io/input-stream.  handlers can be an ILookup or
+a map of tag =&gt; ReadHandler.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L206" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/create-writer">create-writer</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (create-writer out &amp; {:keys [handlers]})
+</pre>
+    <pre id="var-docstr">Create a fressian writer targeting out. Handlers must be
+a nested map of type =&gt; tag =&gt; WriteHandler.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L200" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/end-list">end-list</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (end-list writer)
+</pre>
+    <pre id="var-docstr">Ends a list begun with begin-closed-list.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L277" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/field-caching-writer">field-caching-writer</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (field-caching-writer cache-pred)
+</pre>
+    <pre id="var-docstr">Returns a record writer that caches values for keys
+matching cache-pred, which is typically specified
+as a set, e.g. (field-caching-writer #{:color})</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L132" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/inheritance-lookup">inheritance-lookup</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (inheritance-lookup lookup)
+</pre>
+    <pre id="var-docstr">Returns an inheritance aware lookup based on lookup that will match
+subclasses as well as exact matches.  Will walk inheritance hierarchy
+once per new type encountered to find the best match, then cache
+results.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L58" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/read">read</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (read readable &amp; options)
+</pre>
+    <pre id="var-docstr">Convenience method for reading a single fressian object.
+Takes same options as create-writer.  Readable can be
+any type supported by clojure.java.io/input-stream, or
+a ByteBuffer.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L225" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/read-object">read-object</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (read-object rdr)
+</pre>
+    <pre id="var-docstr">Read a single object from a fressian reader.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L215" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/tag">tag</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (tag obj)
+</pre>
+    <pre id="var-docstr">Returns the tag if object is a tagged-object, else nil.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L254" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/tagged-object?">tagged-object?</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (tagged-object? o)
+</pre>
+    <pre id="var-docstr">Returns true if o is a tagged object, which will occur when
+the reader does not recognized a specific type.  Use tag
+and tagged-value to access the contents of a tagged-object.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L247" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/tagged-value">tagged-value</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (tagged-value obj)
+</pre>
+    <pre id="var-docstr">Returns the value (an Object arrray) wrapped by obj, or nil
+if obj is not a tagged object.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L260" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/write">write</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (write obj &amp; options)
+</pre>
+    <pre id="var-docstr">Convenience method for writing a single object.  Returns a
+byte buffer.  Options are the same as for create-reader,
+with one additional option.  If footer? is specified, will
+write a fressian footer after writing the object.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L233" id="var-source">Source</a>
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.data.fressian/write-object">write-object</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (write-object writer obj)
+</pre>
+    <pre id="var-docstr">Write a single object to a fressian reader. Returns the reader.</pre>
+    
+    
+    <a href="https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L220" id="var-source">Source</a>
+  </div>
+</div>
+
+
+</div>
+              </div>
+            </div>
+          </div>
+	</div>
+	<div id="foot">
+	  <div style="text-align: center;" id="copyright">Copyright 2007-2013 by Rich Hickey and the various contributors</div>
+	</div>
+      </div>
+      <div id="DesignedBy">Logo &amp; site design by <a title="Visit Tom Hickey's website." href="http://www.tomhickey.com">Tom Hickey</a>.<br />
+      Clojure auto-documentation system by Tom Faulhaber.</div>
+    </div>
+    <!-- /AllContentContainer -->
+  </body>
+
+</html>
