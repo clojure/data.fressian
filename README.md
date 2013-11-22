@@ -1,6 +1,6 @@
 # data.fressian
 
-Read and write fressian data. See http://edn-format.org/
+Read and write fressian data. See https://github.com/Datomic/fressian/wiki
 
 # Releases and Dependency Information
 
