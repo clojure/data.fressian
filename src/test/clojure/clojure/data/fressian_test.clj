@@ -53,8 +53,7 @@
 (defn data-with-handler
   "Generate data that has data.fressian specific handler"
   []
-  (gen/one-of #(.byteValue (gen/byte))
-              gen/char
+  (gen/one-of gen/char
               gen/ratio
               gen/bigint
               gen-example-record

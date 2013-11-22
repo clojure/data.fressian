@@ -1,10 +1,8 @@
-data.fressian
-========================================
+# data.fressian
 
 Read and write fressian data. See http://edn-format.org/
 
-Releases and Dependency Information
-----------------------------------------
+# Releases and Dependency Information
 
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
@@ -26,10 +24,7 @@ Other versions:
 
 * [Development Snapshot Repositories](http://dev.clojure.org/display/doc/Maven+Settings+and+Repositories)
 
-
-
-Usage
-----------------------------------------
+# Usage
 
 [API Documentation](http://clojure.github.com/data.fressian/)
 
@@ -45,14 +40,13 @@ Examples:
     (fress/create-reader is)
     (fress/create-writer os)
 
-    ;; all read/write functions tate optional handlers
+    ;; all read/write functions take optional handlers
     (fress/write x :handlers my-handlers)
 
 Other options are available. Refer to the [API Documentation](http://clojure.github.com/data.fressian/) for details.
 
 
-Developer Information
-----------------------------------------
+# Developer Information
 
 * [GitHub project](https://github.com/clojure/data.fressian)
 
@@ -63,13 +57,7 @@ Developer Information
 * [Compatibility Test Matrix](http://build.clojure.org/job/data.fressian-test-matrix/)
 
 
-
-Change Log
-----------------------------------------
-
-
-Copyright and License
-----------------------------------------
+# Copyright and License
 
 Copyright (c) Cognitect, Inc. All rights reserved.  The use and
 distribution terms for this software are covered by the Eclipse Public

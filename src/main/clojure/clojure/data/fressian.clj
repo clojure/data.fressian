@@ -70,14 +70,7 @@
 
 (def clojure-write-handlers
   "Standard set of write handlers for Clojure data."
-  {Byte
-   {"byte"
-    (reify WriteHandler
-           (write [_ w b]
-                  (.writeTag w "byte" 1)
-                  (.writeInt w (int b))))}
-   
-   Character
+  {Character
    {"char"
     (reify WriteHandler
            (write [_ w ch]
@@ -92,7 +85,7 @@
                   (.writeObject w (.denominator ^Ratio n))))}
 
    IRecord
-   {"record"
+   {"clojure/record"
     (reify WriteHandler
            (write [_ w rec]
                   (.writeTag w "record" 2)
@@ -199,14 +192,16 @@
 
 (defn ^Writer create-writer
   "Create a fressian writer targeting out. Handlers must be
-   a nested map of type => tag => WriteHandler."
+   a nested map of type => tag => WriteHandler, see
+   clojure-write-handlers for an example."
   [^OutputStream out & {:keys [handlers]}]
   (FressianWriter. out (or handlers (-> clojure-write-handlers associative-lookup inheritance-lookup))))
 
 (defn ^Reader create-reader
   "Create a fressian reader targeting in, which must be compatible
-   with clojure.java.io/input-stream.  handlers can be an ILookup or
-   a map of tag => ReadHandler."
+   with clojure.java.io/input-stream.  Handlers can be an ILookup
+   or a map of tag => ReadHandler, see clojure-read-handlers for
+   an example."
   [^InputStream in & {:keys [handlers checksum?]}]
   (FressianReader. in
                    (or handlers (associative-lookup clojure-read-handlers))
