@@ -1,6 +1,6 @@
 {:namespaces
  ({:source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian/clojure.data.fressian-api.html",
    :name "clojure.data.fressian",
@@ -11,9 +11,9 @@
    :name "associative-lookup",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L52",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L52",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/associative-lookup",
    :doc "Build an ILookup from an associative collection.",
@@ -24,47 +24,47 @@
    :name "begin-closed-list",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L271",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L266",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/begin-closed-list",
    :doc
    "Begin writing a fressianed list.  To end the list, call end-list.\nUsed to write sequential data whose size is not known in advance.",
    :var-type "function",
-   :line 271,
+   :line 266,
    :file "src/main/clojure/clojure/data/fressian.clj"}
   {:arglists ([writer]),
    :name "begin-open-list",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L282",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L277",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/begin-open-list",
    :doc
    "Advanced.  Writes fressian code to begin an open list.  An\nopen list can be terminated either by a call to end-list,\nor by simply closing the stream.  Used to write sequential\ndata whose size is not known in advance, in contexts where\nstream failure can safely be interpreted as end of list.",
    :var-type "function",
-   :line 282,
+   :line 277,
    :file "src/main/clojure/clojure/data/fressian.clj"}
   {:file "src/main/clojure/clojure/data/fressian.clj",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L159",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L152",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/clojure-read-handlers",
    :namespace "clojure.data.fressian",
-   :line 159,
+   :line 152,
    :var-type "var",
    :doc "Standard set of read handlers for Clojure data.",
    :name "clojure-read-handlers"}
   {:file "src/main/clojure/clojure/data/fressian.clj",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L71",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L71",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/clojure-write-handlers",
    :namespace "clojure.data.fressian",
@@ -76,64 +76,64 @@
    :name "create-reader",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L206",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L200",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/create-reader",
    :doc
-   "Create a fressian reader targeting in, which must be compatible\nwith clojure.java.io/input-stream.  handlers can be an ILookup or\na map of tag => ReadHandler.",
+   "Create a fressian reader targeting in, which must be compatible\nwith clojure.java.io/input-stream.  Handlers can be an ILookup\nor a map of tag => ReadHandler, see clojure-read-handlers for\nan example.",
    :var-type "function",
-   :line 206,
+   :line 200,
    :file "src/main/clojure/clojure/data/fressian.clj"}
   {:arglists ([out & {:keys [handlers]}]),
    :name "create-writer",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L200",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L193",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/create-writer",
    :doc
-   "Create a fressian writer targeting out. Handlers must be\na nested map of type => tag => WriteHandler.",
+   "Create a fressian writer targeting out. Handlers must be\na nested map of type => tag => WriteHandler, see\nclojure-write-handlers for an example.",
    :var-type "function",
-   :line 200,
+   :line 193,
    :file "src/main/clojure/clojure/data/fressian.clj"}
   {:arglists ([writer]),
    :name "end-list",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L277",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L272",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/end-list",
    :doc "Ends a list begun with begin-closed-list.",
    :var-type "function",
-   :line 277,
+   :line 272,
    :file "src/main/clojure/clojure/data/fressian.clj"}
   {:arglists ([cache-pred]),
    :name "field-caching-writer",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L132",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L125",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/field-caching-writer",
    :doc
    "Returns a record writer that caches values for keys\nmatching cache-pred, which is typically specified\nas a set, e.g. (field-caching-writer #{:color})",
    :var-type "function",
-   :line 132,
+   :line 125,
    :file "src/main/clojure/clojure/data/fressian.clj"}
   {:arglists ([lookup]),
    :name "inheritance-lookup",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L58",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L58",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/inheritance-lookup",
    :doc
@@ -145,103 +145,103 @@
    :name "read",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L225",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L220",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/read",
    :doc
    "Convenience method for reading a single fressian object.\nTakes same options as create-writer.  Readable can be\nany type supported by clojure.java.io/input-stream, or\na ByteBuffer.",
    :var-type "function",
-   :line 225,
+   :line 220,
    :file "src/main/clojure/clojure/data/fressian.clj"}
   {:arglists ([rdr]),
    :name "read-object",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L215",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L210",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/read-object",
    :doc "Read a single object from a fressian reader.",
    :var-type "function",
-   :line 215,
+   :line 210,
    :file "src/main/clojure/clojure/data/fressian.clj"}
   {:arglists ([obj]),
    :name "tag",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L254",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L249",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/tag",
    :doc "Returns the tag if object is a tagged-object, else nil.",
    :var-type "function",
-   :line 254,
+   :line 249,
    :file "src/main/clojure/clojure/data/fressian.clj"}
   {:arglists ([o]),
    :name "tagged-object?",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L247",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L242",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/tagged-object?",
    :doc
    "Returns true if o is a tagged object, which will occur when\nthe reader does not recognized a specific type.  Use tag\nand tagged-value to access the contents of a tagged-object.",
    :var-type "function",
-   :line 247,
+   :line 242,
    :file "src/main/clojure/clojure/data/fressian.clj"}
   {:arglists ([obj]),
    :name "tagged-value",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L260",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L255",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/tagged-value",
    :doc
    "Returns the value (an Object arrray) wrapped by obj, or nil\nif obj is not a tagged object.",
    :var-type "function",
-   :line 260,
+   :line 255,
    :file "src/main/clojure/clojure/data/fressian.clj"}
   {:arglists ([obj & options]),
    :name "write",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L233",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L228",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/write",
    :doc
    "Convenience method for writing a single object.  Returns a\nbyte buffer.  Options are the same as for create-reader,\nwith one additional option.  If footer? is specified, will\nwrite a fressian footer after writing the object.",
    :var-type "function",
-   :line 233,
+   :line 228,
    :file "src/main/clojure/clojure/data/fressian.clj"}
   {:arglists ([writer obj]),
    :name "write-object",
    :namespace "clojure.data.fressian",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L220",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L215",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/write-object",
    :doc
    "Write a single object to a fressian reader. Returns the reader.",
    :var-type "function",
-   :line 220,
+   :line 215,
    :file "src/main/clojure/clojure/data/fressian.clj"}
   {:file "src/main/clojure/clojure/data/fressian.clj",
    :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj",
+   "https://github.com/clojure/data.fressian/raw/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj",
    :source-url
-   "https://github.com/clojure/data.fressian/blob/f915c925cbab2607f19fcf013510567a4d35d024/src/main/clojure/clojure/data/fressian.clj#L38",
+   "https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L38",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/FressianReadable",
    :namespace "clojure.data.fressian",
