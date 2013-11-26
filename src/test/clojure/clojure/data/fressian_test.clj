@@ -44,6 +44,16 @@
   []
   (gen/rand-nth @keyword-pool))
 
+(def vector-pool
+  "Pool vectors so generation does not exhaust permgen"
+  (delay
+   (binding [gen/*rnd* (java.util.Random. 42)]
+     (into [] (repeatedly 1000 gen/vec)))))
+
+(defn vector-from-pool
+  []
+  (gen/rand-nth @vector-pool))
+
 (defrecord ExampleRecord [^long f1 ^char f2 f3])
 
 (defn gen-example-record
@@ -58,7 +68,8 @@
               gen/bigint
               gen-example-record
               symbol-from-pool
-              keyword-from-pool))
+              keyword-from-pool
+              vector-from-pool))
 
 (defspec test-roundtrip-anything
   roundtrip
