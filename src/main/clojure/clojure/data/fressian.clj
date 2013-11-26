@@ -120,7 +120,14 @@
    {"sym"
     (reify WriteHandler
            (write [_ w s]
-                  (write-named "sym" w s)))}})
+                  (write-named "sym" w s)))}
+
+   clojure.lang.PersistentVector
+   {"vec"
+    (reify WriteHandler
+      (write [_ w s]
+             (.writeTag w "vec" 1)
+             (.writeList w s)))}})
 
 (defn field-caching-writer
   "Returns a record writer that caches values for keys
@@ -188,7 +195,10 @@
                             (let [kvs ^java.util.List (.readObject rdr)]
                               (if (< (.size kvs) 16)
                                 (clojure.lang.PersistentArrayMap. (.toArray kvs))
-                                (clojure.lang.PersistentHashMap/create (seq kvs))))))})
+                                (clojure.lang.PersistentHashMap/create (seq kvs))))))
+   "vec"
+   (reify ReadHandler (read [_ rdr tag component-count]
+                            (vec (.readObject rdr))))})
 
 (defn ^Writer create-writer
   "Create a fressian writer targeting out. Handlers must be
