@@ -50,7 +50,7 @@ Other options are available. Refer to the [API Documentation](http://clojure.git
 
 * [GitHub project](https://github.com/clojure/data.fressian)
 
-* [Bug Tracker](http://dev.clojure.org/jira/browse/DFRESS)
+* [Bug Tracker](http://dev.clojure.org/jira/browse/DFRS)
 
 * [Continuous Integration](http://build.clojure.org/job/data.fressian/)
 
