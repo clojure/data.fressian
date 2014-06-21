@@ -149,7 +149,7 @@ namespace.
     </div>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L38" id="proto-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L38" id="proto-source">Source</a>
   </div>
 </div>
 
@@ -166,7 +166,7 @@ namespace.
     <pre id="var-docstr">Build an ILookup from an associative collection.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L52" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L52" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -178,7 +178,7 @@ namespace.
 Used to write sequential data whose size is not known in advance.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L266" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L267" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -193,7 +193,7 @@ data whose size is not known in advance, in contexts where
 stream failure can safely be interpreted as end of list.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L277" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L278" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -203,7 +203,7 @@ stream failure can safely be interpreted as end of list.</pre>
     <pre id="var-docstr">Standard set of read handlers for Clojure data.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L152" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L152" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -213,7 +213,7 @@ stream failure can safely be interpreted as end of list.</pre>
     <pre id="var-docstr">Standard set of write handlers for Clojure data.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L71" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L71" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -222,12 +222,12 @@ stream failure can safely be interpreted as end of list.</pre>
     <pre id="var-usage">Usage: (create-reader in &amp; {:keys [handlers checksum?]})
 </pre>
     <pre id="var-docstr">Create a fressian reader targeting in, which must be compatible
-with clojure.java.io/input-stream.  Handlers can be an ILookup
-or a map of tag =&gt; ReadHandler, see clojure-read-handlers for
-an example.</pre>
+with clojure.java.io/input-stream.  Handlers must be a map of
+tag =&gt; ReadHandler wrapped in associative-lookup. See
+clojure-read-handlers for an example.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L200" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L201" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -236,11 +236,12 @@ an example.</pre>
     <pre id="var-usage">Usage: (create-writer out &amp; {:keys [handlers]})
 </pre>
     <pre id="var-docstr">Create a fressian writer targeting out. Handlers must be
-a nested map of type =&gt; tag =&gt; WriteHandler, see
+a nested map of type =&gt; tag =&gt; WriteHandler wrapped with
+associative-lookup and inheritance-lookup. See
 clojure-write-handlers for an example.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L193" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L193" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -251,7 +252,7 @@ clojure-write-handlers for an example.</pre>
     <pre id="var-docstr">Ends a list begun with begin-closed-list.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L272" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L273" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -264,7 +265,7 @@ matching cache-pred, which is typically specified
 as a set, e.g. (field-caching-writer #{:color})</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L125" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L125" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -278,7 +279,7 @@ once per new type encountered to find the best match, then cache
 results.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L58" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L58" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -292,7 +293,7 @@ any type supported by clojure.java.io/input-stream, or
 a ByteBuffer.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L220" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L221" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -303,7 +304,7 @@ a ByteBuffer.</pre>
     <pre id="var-docstr">Read a single object from a fressian reader.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L210" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L211" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -314,7 +315,7 @@ a ByteBuffer.</pre>
     <pre id="var-docstr">Returns the tag if object is a tagged-object, else nil.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L249" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L250" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -327,7 +328,7 @@ the reader does not recognized a specific type.  Use tag
 and tagged-value to access the contents of a tagged-object.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L242" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L243" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -339,7 +340,7 @@ and tagged-value to access the contents of a tagged-object.</pre>
 if obj is not a tagged object.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L255" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L256" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -353,7 +354,7 @@ with one additional option.  If footer? is specified, will
 write a fressian footer after writing the object.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L228" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L229" id="var-source">Source</a>
   </div><div id="var-entry">
     <br />
     <hr />
@@ -364,7 +365,7 @@ write a fressian footer after writing the object.</pre>
     <pre id="var-docstr">Write a single object to a fressian reader. Returns the reader.</pre>
     
     
-    <a href="https://github.com/clojure/data.fressian/blob/45b413805f746de94803f72c3bbe78d939a72a3f/src/main/clojure/clojure/data/fressian.clj#L215" id="var-source">Source</a>
+    <a href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L216" id="var-source">Source</a>
   </div>
 </div>
 
