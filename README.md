@@ -28,23 +28,21 @@ Other versions:
 
 [API Documentation](http://clojure.github.com/data.fressian/)
 
-Examples:
+Basic examples:
 
-    (require '[clojure.data.fressian :as fress])
+```clojure
+(require '[clojure.data.fressian :as fress])
 
-    ;; read / write objects
-    (fress/write x)
-    (fress/read)
+;; read / write objects
+(fress/write x)
+(fress/read)
 
-    ;; create reader/write on input/output streams
-    (fress/create-reader is)
-    (fress/create-writer os)
+;; create reader/write on input/output streams
+(fress/create-reader is)
+(fress/create-writer os)
+```
 
-    ;; all read/write functions take optional handlers
-    (fress/write x :handlers my-handlers)
-
-Other options are available. Refer to the [API Documentation](http://clojure.github.com/data.fressian/) for details.
-
+It is also possible to create custom tags and handlers. For more information see [Creating custom handlers](https://github.com/clojure/data.fressian/wiki/Creating-custom-handlers) for details.
 
 # Developer Information
 
