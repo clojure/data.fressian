@@ -48,30 +48,32 @@
    :namespace "clojure.data.fressian",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/begin-open-list"}
-  {:name "clojure-read-handlers",
-   :doc "Standard set of read handlers for Clojure data.",
-   :var-type "var",
-   :line 152,
-   :namespace "clojure.data.fressian",
-   :wiki-url
-   "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/clojure-read-handlers",
+  {:raw-source-url
+   "https://github.com/clojure/data.fressian/raw/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj",
+   :name "clojure-read-handlers",
+   :file "src/main/clojure/clojure/data/fressian.clj",
    :source-url
    "https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L152",
-   :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj",
-   :file "src/main/clojure/clojure/data/fressian.clj"}
-  {:name "clojure-write-handlers",
-   :doc "Standard set of write handlers for Clojure data.",
+   :line 152,
    :var-type "var",
-   :line 71,
+   :arglists nil,
+   :doc "Standard set of read handlers for Clojure data.",
    :namespace "clojure.data.fressian",
    :wiki-url
-   "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/clojure-write-handlers",
+   "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/clojure-read-handlers"}
+  {:raw-source-url
+   "https://github.com/clojure/data.fressian/raw/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj",
+   :name "clojure-write-handlers",
+   :file "src/main/clojure/clojure/data/fressian.clj",
    :source-url
    "https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L71",
-   :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj",
-   :file "src/main/clojure/clojure/data/fressian.clj"}
+   :line 71,
+   :var-type "var",
+   :arglists nil,
+   :doc "Standard set of write handlers for Clojure data.",
+   :namespace "clojure.data.fressian",
+   :wiki-url
+   "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/clojure-write-handlers"}
   {:raw-source-url
    "https://github.com/clojure/data.fressian/raw/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj",
    :name "create-reader",
@@ -237,23 +239,24 @@
    :namespace "clojure.data.fressian",
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/write-object"}
-  {:name "FressianReadable",
-   :doc nil,
-   :var-type "protocol",
-   :line 38,
-   :namespace "clojure.data.fressian",
-   :wiki-url
-   "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/FressianReadable",
+  {:raw-source-url
+   "https://github.com/clojure/data.fressian/raw/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj",
+   :name "FressianReadable",
+   :file "src/main/clojure/clojure/data/fressian.clj",
    :source-url
    "https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L38",
-   :raw-source-url
-   "https://github.com/clojure/data.fressian/raw/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj",
-   :file "src/main/clojure/clojure/data/fressian.clj"}
+   :line 38,
+   :var-type "protocol",
+   :arglists nil,
+   :doc nil,
+   :namespace "clojure.data.fressian",
+   :wiki-url
+   "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/FressianReadable"}
   {:name "to-input-stream",
    :doc "Implementation detail.",
-   :arglists ([obj]),
    :var-type "function",
    :namespace "clojure.data.fressian",
+   :arglists ([obj]),
    :wiki-url
    "http://clojure.github.com/data.fressian//clojure.data.fressian-api.html#clojure.data.fressian/to-input-stream",
    :source-url nil,
