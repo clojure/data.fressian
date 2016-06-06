@@ -110,6 +110,9 @@ namespace.
       <a href="#clojure.data.fressian/write-object" class="toc-entry-anchor">write-object</a>
       
     </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
   </div>
 </div>
 </div>
@@ -143,6 +146,7 @@ namespace.
       <pre id="var-usage">Usage: (to-input-stream obj)
 </pre>
       <pre id="var-docstr">Implementation detail.</pre>
+      <pre id="var-specs"></pre>
       
       
       
@@ -164,6 +168,7 @@ namespace.
     <pre id="var-usage">Usage: (associative-lookup o)
 </pre>
     <pre id="var-docstr">Build an ILookup from an associative collection.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L52">Source</a>
@@ -176,6 +181,7 @@ namespace.
 </pre>
     <pre id="var-docstr">Begin writing a fressianed list.  To end the list, call end-list.
 Used to write sequential data whose size is not known in advance.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L267">Source</a>
@@ -191,6 +197,7 @@ open list can be terminated either by a call to end-list,
 or by simply closing the stream.  Used to write sequential
 data whose size is not known in advance, in contexts where
 stream failure can safely be interpreted as end of list.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L278">Source</a>
@@ -201,6 +208,7 @@ stream failure can safely be interpreted as end of list.</pre>
     <span id="var-type">var</span><br />
     <pre id="var-usage"></pre>
     <pre id="var-docstr">Standard set of read handlers for Clojure data.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L152">Source</a>
@@ -211,6 +219,7 @@ stream failure can safely be interpreted as end of list.</pre>
     <span id="var-type">var</span><br />
     <pre id="var-usage"></pre>
     <pre id="var-docstr">Standard set of write handlers for Clojure data.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L71">Source</a>
@@ -225,6 +234,7 @@ stream failure can safely be interpreted as end of list.</pre>
 with clojure.java.io/input-stream.  Handlers must be a map of
 tag =&gt; ReadHandler wrapped in associative-lookup. See
 clojure-read-handlers for an example.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L201">Source</a>
@@ -239,6 +249,7 @@ clojure-read-handlers for an example.</pre>
 a nested map of type =&gt; tag =&gt; WriteHandler wrapped with
 associative-lookup and inheritance-lookup. See
 clojure-write-handlers for an example.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L193">Source</a>
@@ -250,6 +261,7 @@ clojure-write-handlers for an example.</pre>
     <pre id="var-usage">Usage: (end-list writer)
 </pre>
     <pre id="var-docstr">Ends a list begun with begin-closed-list.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L273">Source</a>
@@ -263,6 +275,7 @@ clojure-write-handlers for an example.</pre>
     <pre id="var-docstr">Returns a record writer that caches values for keys
 matching cache-pred, which is typically specified
 as a set, e.g. (field-caching-writer #{:color})</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L125">Source</a>
@@ -277,6 +290,7 @@ as a set, e.g. (field-caching-writer #{:color})</pre>
 subclasses as well as exact matches.  Will walk inheritance hierarchy
 once per new type encountered to find the best match, then cache
 results.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L58">Source</a>
@@ -291,6 +305,7 @@ results.</pre>
 Takes same options as create-writer.  Readable can be
 any type supported by clojure.java.io/input-stream, or
 a ByteBuffer.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L221">Source</a>
@@ -302,6 +317,7 @@ a ByteBuffer.</pre>
     <pre id="var-usage">Usage: (read-object rdr)
 </pre>
     <pre id="var-docstr">Read a single object from a fressian reader.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L211">Source</a>
@@ -313,6 +329,7 @@ a ByteBuffer.</pre>
     <pre id="var-usage">Usage: (tag obj)
 </pre>
     <pre id="var-docstr">Returns the tag if object is a tagged-object, else nil.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L250">Source</a>
@@ -326,6 +343,7 @@ a ByteBuffer.</pre>
     <pre id="var-docstr">Returns true if o is a tagged object, which will occur when
 the reader does not recognized a specific type.  Use tag
 and tagged-value to access the contents of a tagged-object.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L243">Source</a>
@@ -338,6 +356,7 @@ and tagged-value to access the contents of a tagged-object.</pre>
 </pre>
     <pre id="var-docstr">Returns the value (an Object arrray) wrapped by obj, or nil
 if obj is not a tagged object.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L256">Source</a>
@@ -352,6 +371,7 @@ if obj is not a tagged object.</pre>
 byte buffer.  Options are the same as for create-reader,
 with one additional option.  If footer? is specified, will
 write a fressian footer after writing the object.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L229">Source</a>
@@ -363,6 +383,7 @@ write a fressian footer after writing the object.</pre>
     <pre id="var-usage">Usage: (write-object writer obj)
 </pre>
     <pre id="var-docstr">Write a single object to a fressian reader. Returns the reader.</pre>
+    <pre id="var-specs"></pre>
     
     
     <a id="var-source" href="https://github.com/clojure/data.fressian/blob/73defb8fe500d9a976e0d38a8300b9c72fe2eb98/src/main/clojure/clojure/data/fressian.clj#L216">Source</a>
