@@ -220,7 +220,7 @@
 
 (defn read
   "Convenience method for reading a single fressian object.
-   Takes same options as create-writer.  Readable can be
+   Takes same options as create-reader.  Readable can be
    any type supported by clojure.java.io/input-stream, or
    a ByteBuffer."
   [readable & options]
