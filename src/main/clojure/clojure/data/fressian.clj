@@ -214,7 +214,7 @@
   (.readObject rdr))
 
 (defn write-object
-  "Write a single object to a fressian reader. Returns the reader."
+  "Write a single object to a fressian writer. Returns the writer."
   [^Writer writer obj]
   (.writeObject writer obj))
 
