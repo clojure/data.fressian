@@ -6,14 +6,14 @@ Read and write fressian data. See https://github.com/Datomic/fressian/wiki
 
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
-    [org.clojure/data.fressian "0.2.1"]
+    [org.clojure/data.fressian "1.0.0"]
 
 [Maven](http://maven.apache.org/) dependency information:
 
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>data.fressian</artifactId>
-      <version>0.2.1</version>
+      <version>1.0.0</version>
     </dependency>
 
 Other versions:
