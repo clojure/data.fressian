@@ -18,6 +18,7 @@
    [java.io InputStream OutputStream]
    [java.nio ByteBuffer]
    [org.fressian FressianWriter StreamingWriter FressianReader TaggedObject Writer Reader]
+   [org.fressian.converters IConvertList]
    [org.fressian.handlers WriteHandler ReadHandler ILookup WriteHandlerLookup]
    [org.fressian.impl ByteBufferInputStream BytesOutputStream InheritanceLookup]))
 
@@ -200,13 +201,26 @@
 
 (defn ^Reader create-reader
   "Create a fressian reader targeting in, which must be compatible
-   with clojure.java.io/input-stream.  Handlers must be a map of
-   tag => ReadHandler wrapped in associative-lookup. See
-   clojure-read-handlers for an example."
-  [^InputStream in & {:keys [handlers checksum?]}]
-  (FressianReader. in
-                   (or handlers (associative-lookup clojure-read-handlers))
-                   (boolean checksum?)))
+with clojure.java.io/input-stream. Optional keyword args:
+
+handlers         fressian.handlers.ILookup from tag to fressian.handlers.ReadHandler
+list-converter   creates a List from an object array
+checksum?        boolean to request checksum validation
+
+Default values:
+handlers         an ILookup over clojure-read-handlers
+list-converter   creates a Clojure vector
+checksum?        false
+"
+  [^InputStream in & {:keys [handlers convert-list checksum?]}]
+  (let [^ILookup lookup (or handlers (associative-lookup clojure-read-handlers))
+        convert-list (or convert-list vec)]
+    (FressianReader. in
+                     (reify ILookup
+                            (valAt [_ k] (.valAt lookup k))
+                            IConvertList
+                            (convertList [_ arr] (convert-list arr)))
+                     (boolean checksum?))))
 
 (defn read-object
   "Read a single object from a fressian reader."
