@@ -7,15 +7,34 @@
 ;; remove this notice, or any other, from this software.
 
 (ns clojure.data.fressian-test
-  (:import clojure.lang.Ratio)
+  (:refer-clojure :exclude (read))
+  (:import
+   clojure.lang.Ratio
+   [java.nio ByteBuffer]
+   [org.fressian.impl BytesOutputStream]
+   [org.fressian Reader Writer])
   (:require
    [clojure.data.fressian :as fress]
    [clojure.data.generators :as gen]
    [clojure.test.generative :refer (defspec)]))
 
+(defn read
+  [readable & options]
+  (.readObject ^Reader (apply fress/reader (fress/to-input-stream readable) options)))
+
+(defn ^ByteBuffer write
+  [obj & options]
+  (let [{:keys [footer?]} (when options (apply hash-map options))
+        bos (BytesOutputStream.)
+        writer ^Writer (apply fress/writer bos options)]
+    (.writeObject writer obj)
+    (when footer?
+      (.writeFooter writer))
+    (@#'fress/bytestream->buf bos)))
+
 (defn roundtrip
   [x]
-  (-> x fress/write fress/read))
+  (-> x write read))
 
 (def clojure-fressianable
   gen/anything)
@@ -55,12 +74,13 @@
   []
   (gen/one-of gen/char
               gen/ratio
+              (gen/vec gen/long)
               gen/bigint
               gen-example-record
               symbol-from-pool
               keyword-from-pool))
 
-(defspec test-roundtrip-anything
+(defspec roundtrip-anything
   roundtrip
   [^{:tag `clojure-fressianable} o]
   (when-not (= o %)
@@ -71,7 +91,7 @@
   #_(when-not (= (meta o) (meta %))
       (throw (ex-info "(meta obj) != (meta readback)" {:object o :readback %}))))
 
-(defspec test-roundtrip-handlers
+(defspec roundtrip-handlers
   roundtrip
   [^{:tag `data-with-handler} o])
 

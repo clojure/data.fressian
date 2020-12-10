@@ -18,6 +18,7 @@
    [java.io InputStream OutputStream]
    [java.nio ByteBuffer]
    [org.fressian FressianWriter StreamingWriter FressianReader TaggedObject Writer Reader]
+   [org.fressian.converters IConvertList]
    [org.fressian.handlers WriteHandler ReadHandler ILookup WriteHandlerLookup]
    [org.fressian.impl ByteBufferInputStream BytesOutputStream InheritanceLookup]))
 
@@ -191,22 +192,75 @@
                                 (clojure.lang.PersistentHashMap/create (seq kvs))))))})
 
 (defn ^Writer create-writer
-  "Create a fressian writer targeting out. Handlers must be
+  "DEPRECATED: Prefer 'writer' in new code.
+
+   Create a fressian writer targeting out. Handlers must be
    a nested map of type => tag => WriteHandler wrapped with
    associative-lookup and inheritance-lookup. See
    clojure-write-handlers for an example."
+  {:deprecated "1.2"}
+  [^OutputStream out & {:keys [handlers]}]
+  (FressianWriter. out (or handlers (-> clojure-write-handlers associative-lookup inheritance-lookup))))
+
+(defn ^Writer writer
+  "Create a fressian writer targeting out. Optional keyword args
+
+handlers          a nested map from type => tag => write-handler
+
+A write-handler is a function of two arguments, writer and object. For
+compatibility you can also pass an org.fressian.handlers.WriteHandler.
+"
   [^OutputStream out & {:keys [handlers]}]
   (FressianWriter. out (or handlers (-> clojure-write-handlers associative-lookup inheritance-lookup))))
 
 (defn ^Reader create-reader
-  "Create a fressian reader targeting in, which must be compatible
-   with clojure.java.io/input-stream.  Handlers must be a map of
-   tag => ReadHandler wrapped in associative-lookup. See
-   clojure-read-handlers for an example."
+  "DEPRECATED: Prefer 'reader' in new code.
+
+Create a fressian reader targeting in, which must be compatible
+with clojure.java.io/input-stream.  Handlers must be a map of
+tag => ReadHandler wrapped in associative-lookup. See
+clojure-read-handlers for an example."
+  {:deprecated "1.2"}
   [^InputStream in & {:keys [handlers checksum?]}]
   (FressianReader. in
                    (or handlers (associative-lookup clojure-read-handlers))
                    (boolean checksum?)))
+
+(defn ^Reader reader
+  "Create a fressian reader targeting in, which must be compatible
+with clojure.java.io/input-stream. Optional keyword args:
+
+handlers         map from tag name to a read-handler 
+list-converter   creates a List from an object array
+checksum?        validate checksum?
+
+A read-handler is a function of three arguments:
+reader, tag, and component-count. For compatibility you can also
+pass an org.fressian.handlers.ReadHandler.
+
+Default values:
+handlers         clojure-read-handlers
+list-converter   creates a Clojure vector
+checksum?        false
+"
+  [^InputStream in & {:keys [handlers convert-list checksum?]}]
+  (let [handlers (reduce-kv
+                  (fn [m k f]
+                    (assoc m k (if (instance? ReadHandler f)
+                                 f
+                                 (reify ReadHandler
+                                        (read [_ r t i] (f r t i))))))
+                  {}
+                  (or handlers clojure-read-handlers))
+        ^ILookup lookup (associative-lookup handlers)
+        convert-list (or convert-list vec)]
+    (FressianReader. in
+                     (reify ILookup
+                            (valAt [_ k] (.valAt lookup k))
+                            IConvertList
+                            (convertList [_ arr] (convert-list arr)))
+                     (boolean checksum?))))
+
 
 (defn read-object
   "Read a single object from a fressian reader."
@@ -219,18 +273,24 @@
   (.writeObject writer obj))
 
 (defn read
-  "Convenience method for reading a single fressian object.
+  "DEPRECATED: Prefer 'reader' in new code.
+
+   Convenience method for reading a single fressian object.
    Takes same options as create-reader.  Readable can be
    any type supported by clojure.java.io/input-stream, or
    a ByteBuffer."
+  {:deprecated "1.2"}
   [readable & options]
   (.readObject ^Reader (apply create-reader (to-input-stream readable) options)))
 
 (defn ^ByteBuffer write
-  "Convenience method for writing a single object.  Returns a
+  "DEPRECATED: Prefer 'writer' in new code.
+
+   Convenience method for writing a single object.  Returns a
    byte buffer.  Options are the same as for create-reader,
    with one additional option.  If footer? is specified, will
    write a fressian footer after writing the object."
+  {:deprecated "1.2"}
   ([obj & options]
      (let [{:keys [footer?]} (when options (apply hash-map options))
            bos (BytesOutputStream.)
