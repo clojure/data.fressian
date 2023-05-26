@@ -52,12 +52,8 @@ It is also possible to create custom tags and handlers. For more information see
 # Developer Information
 
 * [GitHub project](https://github.com/clojure/data.fressian)
-
-* [Bug Tracker](http://dev.clojure.org/jira/browse/DFRS)
-
-* [Continuous Integration](http://build.clojure.org/job/data.fressian/)
-
-* [Compatibility Test Matrix](http://build.clojure.org/job/data.fressian-test-matrix/)
+* [Bug Tracker](https://clojure.atlassian.net/browse/DFRS)
+* [Continuous Integration](https://github.com/clojure/data.fressian/actions/workflows/test.yml)
 
 
 # Copyright and License
