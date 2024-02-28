@@ -214,7 +214,7 @@
   (.readObject rdr))
 
 (defn write-object
-  "Write a single object to a fressian reader. Returns the reader."
+  "Write a single object to a fressian writer. Returns the writer."
   [^Writer writer obj]
   (.writeObject writer obj))
 
@@ -228,7 +228,7 @@
 
 (defn ^ByteBuffer write
   "Convenience method for writing a single object.  Returns a
-   byte buffer.  Options are the same as for create-reader,
+   byte buffer.  Options are the same as for create-writer,
    with one additional option.  If footer? is specified, will
    write a fressian footer after writing the object."
   ([obj & options]
