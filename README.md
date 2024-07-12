@@ -29,7 +29,7 @@ Other versions:
 
 # Usage
 
-[API Documentation](https://clojure.github.com/data.fressian/)
+[API Documentation](https://clojure.github.io/data.fressian/)
 
 Basic examples:
 
