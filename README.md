@@ -6,19 +6,19 @@ Read and write fressian data. See https://github.com/Datomic/fressian/wiki
 
 [CLI/`deps.edn`](https://clojure.org/reference/deps_edn) dependency information:
 ```clojure
-org.clojure/data.fressian {:mvn/version "1.1.0"}
+org.clojure/data.fressian {:mvn/version "1.1.1"}
 ```
 
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
-    [org.clojure/data.fressian "1.1.0"]
+    [org.clojure/data.fressian "1.1.1"]
 
 [Maven](http://maven.apache.org/) dependency information:
 
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>data.fressian</artifactId>
-      <version>1.1.0</version>
+      <version>1.1.1</version>
     </dependency>
 
 Other versions:
